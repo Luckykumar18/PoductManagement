@@ -65,6 +65,7 @@ export default function Login() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
               </div>
+              <br></br>
               <div>
                 <input
                   id="password"
@@ -78,7 +79,7 @@ export default function Login() {
                 />
               </div>
             </div>
-
+            <br></br>
             <div>
               <button
                 type="submit"
@@ -87,7 +88,7 @@ export default function Login() {
                 Sign in
               </button>
             </div>
-
+            <br></br>
             <div>
               <button
                 type="button"
@@ -101,7 +102,7 @@ export default function Login() {
 
           <div className="text-center">
             <p className="text-sm text-gray-600">
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <Link to="/signup" className="font-medium text-primary hover:text-red-700">
                 Sign up
               </Link>
@@ -112,3 +113,4 @@ export default function Login() {
     </>
   );
 }
+
