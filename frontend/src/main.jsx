@@ -11,10 +11,10 @@ axios.defaults.withCredentials = true;
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <GoogleAuthProviderWrapper>
+   
     <AuthProvider>
       <App />
     </AuthProvider>
-    </GoogleAuthProviderWrapper>
+ 
   </BrowserRouter>
 );
