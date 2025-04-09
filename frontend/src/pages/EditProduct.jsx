@@ -1,5 +1,5 @@
 // src/pages/EditProduct.jsx
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { getProductDetails, updateProduct, deleteProduct } from "../../helpers/apiCommunicators";
@@ -101,8 +101,10 @@ export default function EditProduct() {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
             </div>
+            <br></br>
             <div>
               <label className="block text-sm font-medium text-gray-700">Description</label>
+              <br></br>
               <textarea
                 required
                 rows={4}
@@ -112,7 +114,8 @@ export default function EditProduct() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700">Category</label>
+              <br></br>
+          <label className="block text-sm font-medium text-gray-700">Category</label>
               <select
                 required
                 className="mt-1 block w-full rounded-md border-gray-300 px-3 py-2"
@@ -126,6 +129,7 @@ export default function EditProduct() {
               </select>
             </div>
             <div>
+              <br></br>
               <label className="block text-sm font-medium text-gray-700">Price ($)</label>
               <input
                 type="number"
@@ -138,6 +142,7 @@ export default function EditProduct() {
               />
             </div>
             <div>
+              <br></br>
               <label className="block text-sm font-medium text-gray-700">Rating (0-5)</label>
               <input
                 type="number"
@@ -150,6 +155,7 @@ export default function EditProduct() {
                 onChange={(e) => setFormData({ ...formData, rating: e.target.value })}
               />
             </div>
+            <br></br>
             <div className="flex justify-center mt-8 space-x-4">
               <button
                 type="submit"
@@ -157,6 +163,8 @@ export default function EditProduct() {
               >
                 Update Product
               </button>
+              <br></br>
+              <br></br>
               <button
                 type="button"
                 onClick={handleDelete}
