@@ -1,167 +1,194 @@
+# Product Management Web App
 ## Introduction
 
-Welcome to **Event-lify**, your ultimate solution for seamless event management. Whether you're organizing a small meetup, a large conference, or anything in between, EventsManager provides a robust platform to handle all your event needs. Our goal is to simplify the process of creating, managing, and participating in events, making it a breeze for both organizers and attendees.
+🚀 Product Management Web App is a full-stack application that enables users to register, login, and manage a list of products with advanced features such as filtering, search, and sorting. The application includes JWT-based user authentication and basic product CRUD functionality.
 
-## Key Features
+## Features
 
-### User Authentication
-- Secure signup, login, and logout functionalities.
-- JWT-based authentication for secure and scalable user sessions.
+### User Authentication (JWT-based)
+- User Signup: Register with email and password.
+- User Login: Authenticate and receive a JWT token.
+- User Logout: Logout and clear JWT token from storage.
+- Protected Routes: Only authenticated users can access product management routes.
 
-### Event Management
-- Create, edit, and delete events with an intuitive interface.
-- Upload event images and manage event details effortlessly.
+### Product Management
+- Create Product: Add products with details like name, description, category, price, and rating.
+- View Products: Display a list of products in a table/grid format.
+- Update Product: Edit product details.
+- Delete Product: Remove a product from the listing.
 
-### Event Registration
-- Users can register and unregister for events with a single click.
-- View a list of registered events and manage your participation.
-
-### Live Event Attendance
-- Real-time attendance tracking for live events.
-- View live updates on event participation using Socket.io.
-
-### Responsive Design
-- Optimized for both desktop and mobile devices.
-- Built with Material UI and Tailwind CSS for a modern and responsive user experience.
-
-### Real-time Updates
-- Leveraging Socket.io for real-time event updates and notifications.
-- Instant feedback and updates for a dynamic user experience.
+### Product Filtering & Search
+- Filtering: Filter products by category, price range, or rating.
+- Search: Search products by name or description.
+- Sorting: Sort products by price, rating.
 
 ## Tech Stack
 
 ### Frontend
-
-- **React**: A powerful JavaScript library for building user interfaces.
-- **React Router**: Declarative routing for seamless navigation.
-- **Axios**: Promise-based HTTP client for efficient API communication.
-- **Material UI**: A popular React UI framework for beautiful and responsive designs.
-- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **Socket.io-client**: Real-time bidirectional event-based communication.
+- Framework: React.js (Functional Components with Hooks)
+- Styling: Tailwind CSS 
+- State Management: React Context / Local State
+- Authentication: JWT (stored in localStorage or cookies)
+- Routing: React Router
 
 ### Backend
+- Language: TypeScript/Javascript
+- Framework: NestJS/Express js
+- Database: MongoDB
+- Authentication: JWT Authentication Strategy
 
-- **Node.js**: JavaScript runtime built on Chrome's V8 JavaScript engine.
-- **Express**: Fast, unopinionated, minimalist web framework for Node.js.
-- **MongoDB**: NoSQL database for modern applications.
-- **Mongoose**: Elegant MongoDB object modeling for Node.js.
-- **JWT**: JSON Web Tokens for secure authentication.
-- **Multer**: Middleware for handling multipart/form-data, used for file uploads.
-- **Cloudinary**: Cloud-based image and video management services.
-- **Socket.io**: Enables real-time, bidirectional, and event-based communication.
+This project has two directories in it.
+#BACKEND 
 
-## Project Structure
+- *Controllers*: Handle the logic for different routes.
+- *Middleware*: Custom middleware functions.
+- *Models*: Mongoose schemas and models.
+- *Routes*: Define the API endpoints.
+- *Utils*: Utility functions and constants.
 
-The project is divided into two main directories: `backend` and `frontend`.
+#FRONTEND
 
-### Backend
+- *Components*: Reusable React components.
+- *Context*: Context providers for global state management.
+- *Pages*: Different pages of the application.
+- *Helpers*: Helper functions for API communication.
+- *Styles*: CSS and Tailwind CSS files.
 
-- **Controllers**: Handle the logic for different routes.
-- **Middleware**: Custom middleware functions.
-- **Models**: Mongoose schemas and models.
-- **Routes**: Define the API endpoints.
-- **Utils**: Utility functions and constants.
+## Prerequisites
 
-### Frontend
-
-- **Components**: Reusable React components.
-- **Context**: Context providers for global state management.
-- **Pages**: Different pages of the application.
-- **Helpers**: Helper functions for API communication.
-- **Styles**: CSS and Tailwind CSS files.
-
-## Installation and Setup
-
-### Prerequisites
-
-- Node.js
+Before getting started, ensure you have the following installed:
+- Node.js (v14 or higher)
+- npm
 - MongoDB
-- Cloudinary Account
+- GIT
+- React js
+- express js
 
-### Backend Setup
+## Installation
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/EventsManager.git
-    cd EventsManager/backend
-    ```
+### Backend Setup 
 
-2. Install dependencies:
-    ```sh
-    npm install
-    ```
+1. **Clone the Repository:**
 
-3. Create a `.env` file in the [backend](http://_vscodecontentref_/0) directory and add the following:
-    ```env
-    MongoDBURI=your_mongodb_uri
-    JWT_SECRET=your_jwt_secret
-    COOKIE_SECRET=your_cookie_secret
-    CLOUD_NAME=your_cloudinary_cloud_name
-    CLOUD_API_KEY=your_cloudinary_api_key
-    CLOUD_API_SECRET=your_cloudinary_api_secret
-    ```
+   ```bash
+   git clone https://github.com/yourusername/product-management-webapp.git
+   cd product-management-webapp/backend
+   ```
 
-4. Start the backend server:
-    ```sh
-    npm start
-    ```
+2. **Install Dependencies:**
 
-### Frontend Setup
+   ```bash
+   npm install
+   
 
-1. Navigate to the [frontend](http://_vscodecontentref_/1) directory:
-    ```sh
-    cd ../frontend
-    ```
+3. **Configure Environment Variables:**
 
-2. Install dependencies:
-    ```sh
-    npm install
-    ```
+   Create a `.env` file in the backend folder and define the following variables (adjust values as necessary):
 
-3. Start the frontend development server:
-    ```sh
-    npm run dev
-    ```
+    PORT=3000
+    MongoDBURI=mongodb+srv://Lucky:JZlVW1VHW3hWd7pu@cluster0.kpgmg85.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    JWT_SECRET=secret
+    COOKIE_SECRET=secret
+    CLOUD_NAME=dcy9zyveh
+    CLOUD_API_KEY=175673437257839
+
+
+4. **Start the Backend Server:**
+
+   ```bash
+   nodemon index.js
+   ```
+
+   The backend should now be running on `http://localhost:3000`.
+
+### Frontend Setup (React.js)
+
+1. **Navigate to the Frontend Folder:**
+
+   ```bash
+   cd frontend
+   ```
+
+2. **Install Dependencies:**
+
+   ```bash
+   npm install
+   
+
+3. **Configure API Endpoint:**
+
+   In your frontend project, update the API base URL (for example, in an `.env` file or a configuration file):
+
+   ```env
+   REACT_APP_API_URL=http://localhost:3000/api
+   ```
+
+4. **Start the Frontend Development Server:**
+
+   ```bash
+     npm run dev
+   ```
+
+   The frontend should now be running on `http://localhost:5173` (or the default port for Create React App).
+
+## Environment Variables
+
+### Backend `.env` Example
+
+```env
+PORT=3000
+
+MongoDBURI=mongodb+srv://Lucky:JZlVW1VHW3hWd7pu@cluster0.kpgmg85.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+JWT_SECRET=secret
+
+COOKIE_SECRET=secret
+
+CLOUD_NAME=dcy9zyveh
+
+CLOUD_API_KEY=175673437257839
+
+CLOUD_API_SECRET=hLctSUxSUTb8htjA13ypltEEOIw
+```
+
 
 ## Usage
 
-1. Open your browser and navigate to `http://localhost:5173`.
-2. Sign up for a new account or log in with an existing account.
-3. Create, edit, and manage events.
-4. Register for events and view live attendance.
+1. **User Registration & Login:**  
+   - Open the frontend application.
+   - Sign up with an email and password.
+   - Login using the registered credentials to receive and store the JWT token.
 
-## API Endpoints
+2. **Managing Products:**  
+   - Once logged in, navigate to the product management section.
+   - Create a new product via the form.
+   - View a list of products displayed in a table/grid layout.
+   - Update or delete any existing product.
+   - Use provided filters and search to easily locate products.
 
-### User Routes
+3. **Protected Routes:**  
+   - Note that any product routes are secured using JWT. If you are not authenticated, the app will redirect you to the login page.
 
-- `POST /api/users/signup` - Sign up a new user
-- `POST /api/users/login` - Log in a user
-- `GET /api/users/auth-status` - Verify user authentication status
-- `POST /api/users/logout` - Log out a user
-- `GET /api/users/eventsRegistered` - Get events registered by the user
-- `GET /api/users/eventsCreated` - Get events created by the user
+## Bonus Features 
 
-### Event Routes
-
-- `POST /api/event/create` - Create a new event
-- `GET /api/event` - Get all events
-- `GET /api/event/:id` - Get a specific event by ID
-- `PATCH /api/event/:id` - Edit an event
-- `PUT /api/event/:id` - Register a user for an event
-- `DELETE /api/event/:id` - Delete an event
-- `DELETE /api/event/:id/unregister` - Unregister a user from an event
+- **Product Image Upload:**  
+  Upload product images and save file names to display on the frontend.
 
 
-## Contributing
+- Sorting:
+  Sort products by attributes like price and rating.
 
-We welcome contributions from the community! If you'd like to contribute, please fork the repository and create a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
 
-## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
 
-## Contact
+## Future Improvements
 
-For any inquiries or feedback, please contact us at [your-email@example.com](mailto:your-email@example.com).
+- Enhanced Error Handling: Improve error response messages and user notifications.
+- Real-Time Updates: Implement real-time product updates .
+- User Profile: Add an edit profile page for users.
+- Testing: Integrate unit tests and end-to-end tests for robust code quality.
+- UI/UX Improvements: Enhance the overall look and feel using animations and better UI components.
 
-Thank you for using Event-lify! We hope it makes your event management experience smooth and enjoyable.
+
+
+Thank you for using Product Management We hope it makes your Product management experience smooth and enjoyable.
