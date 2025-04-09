@@ -77,7 +77,7 @@ export default function Navbar() {
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <IconButton edge="start" color="inherit" aria-label="logo" sx={{ "&:hover": { backgroundColor: "transparent" } }}>
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-              <img src="/logo.png" alt="Logo" height={20} width={100} />
+              <img src="/logo.png" alt="Logo" height={70} width={100} />
             </Link>
           </IconButton>
 
